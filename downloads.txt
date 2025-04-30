@@ -1,4 +1,4 @@
-How to download the RNAseq data Analysis Exercise
+How to download the RNAseq data Analysis Exercise - edited
 
 Moved files and created soft links for relevant files
   296  ln -s /project/shared/linux/5_rnaseq/fastq/cd4_rep1_read1.fastq.gz .
