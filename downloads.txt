@@ -1,0 +1,14 @@
+How to download the RNAseq data Analysis Exercise
+
+Moved files and created soft links for relevant files
+  296  ln -s /project/shared/linux/5_rnaseq/fastq/cd4_rep1_read1.fastq.gz .
+  297  ln -s /project/shared/linux/5_rnaseq/fastq/cd4_rep2_read1.fastq.gz .
+  301  cp /project/shared/linux/5_rnaseq/fastq/md5sum.txt .
+  304  ln -s /project/shared/linux/5_rnaseq/fastq/cd4_rep1_read2.fastq.gz .
+  305  md5sum -c md5sum.txt
+
+Downloaded primary assembly and gtf from ensembl
+  312  wget https://ftp.ensembl.org/pub/release-113/fasta/mus_musculus/dna/Mus_musculus.GRCm39.dna.primary_assembly.fa.gz
+  315  md5sum Mus_musculus.GRCm39.dna.primary_assembly.fa.gz >> md5sum.txt
+  316  md5sum -c md5sum.txt
+  327  wget https://ftp.ensembl.org/pub/release-113/gtf/mus_musculus/Mus_musculus.GRCm39.113.gtf.gz
