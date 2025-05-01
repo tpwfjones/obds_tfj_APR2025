@@ -59,7 +59,8 @@ fastqc  --nogroup --threads 1 --extract -o /project/clme2295/1_linux/3_analysis/
  /project/clme2295/1_linux/2_rnaseq/1_fastq/cd4_rep1_read2.fastq.gz
 
 # next is to map the reads to the whole genome. this is done with hisat2. if running on a cluster
-#this is then done with the blue script again followed but the following code. 
+#this is then done with the blue script again followed but the following code. However make sure that
+# you also switch the ntasks to the same number of threads that have been used.
 # Execute these commands 
 
 hisat2 --threads 8 \
