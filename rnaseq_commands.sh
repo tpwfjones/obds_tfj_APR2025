@@ -58,6 +58,17 @@ fastqc  --nogroup --threads 1 --extract -o /project/clme2295/1_linux/3_analysis/
  /project/clme2295/1_linux/2_rnaseq/1_fastq/cd4_rep1_read1.fastq.gz \
  /project/clme2295/1_linux/2_rnaseq/1_fastq/cd4_rep1_read2.fastq.gz
 
+#the next step is to build a mapping index - the code for this is below (note to self we did not
+#do this in the practical as it took too long
+
+# build index from fasta file
+$ hisat2-build mm10.fa mm10
+$ ls
+mm10.1.ht2
+mm10.2.ht2
+mm10.3.ht2
+
+
 # next is to map the reads to the whole genome. this is done with hisat2. if running on a cluster
 #this is then done with the blue script again followed but the following code. However make sure that
 # you also switch the ntasks to the same number of threads that have been used.
