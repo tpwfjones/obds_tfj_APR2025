@@ -12,3 +12,4 @@ Downloaded primary assembly and gtf from ensembl
   315  md5sum Mus_musculus.GRCm39.dna.primary_assembly.fa.gz >> md5sum.txt
   316  md5sum -c md5sum.txt
   327  wget https://ftp.ensembl.org/pub/release-113/gtf/mus_musculus/Mus_musculus.GRCm39.113.gtf.gz
+# as this genome did not match up we re downloaded the GRCm38 version
