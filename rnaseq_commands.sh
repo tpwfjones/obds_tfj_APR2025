@@ -58,6 +58,11 @@ fastqc  --nogroup --threads 1 --extract -o /project/clme2295/1_linux/3_analysis/
  /project/clme2295/1_linux/2_rnaseq/1_fastq/cd4_rep1_read1.fastq.gz \
  /project/clme2295/1_linux/2_rnaseq/1_fastq/cd4_rep1_read2.fastq.gz
 
+#to be able to see the data quality read out you need to run multiqc to be able to create\
+# an html which should then be downloaded on filezilla. the code  exanples could be :
+
+multiqc -o /project/clme2295/1_linux/2_rnaseq/3_analysis/reports .
+
 #the next step is to build a mapping index - the code for this is below (note to self we did not
 #do this in the practical as it took too long
 
