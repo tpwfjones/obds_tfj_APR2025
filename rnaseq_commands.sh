@@ -82,3 +82,24 @@ hisat2 --threads 8 \
 --summary-file stats.txt \
 -S aln-pe.sam
 
+#next step is to complete QC of this data using samtools this can be completed with  the\
+# following code (if using slurm this took about 5 minutes):
+
+samtools view --threads 8 -b /project/clme2295/1_linux/2_rnaseq/3_analysis/2_hisat/cd4_rep1.sam > \
+ /project/clme2295/1_linux/2_rnaseq/3_analysis/3_sambam/cd4_rep1.bam
+ samtools sort --threads 8 cd4_rep1.bam > sorted_cd4_rep1.bam
+ samtools index --threads 8 sorted_cd4_rep1.bam
+ samtools idxstats sorted_cd4_rep1.bam > cd4_rep1.idxstats
+ samtools flagstat sorted_cd4_rep1.bam > cd4_rep1.flagstat
+
+# the inal step is to quantify the number of reads and create a count table. This can be\
+# run with the following code (if using slurm this took less than 1 minute):
+
+featureCounts -T 8 \
+ -t exon -g gene_id -s 2 \
+ -a /project/clme2295/1_linux/2_rnaseq/2_genome/Mus_musculus.GRCm38.102.gtf.gz \
+ -p --countReadPairs \
+ -o attempt2/cd4_rep1_counts_2.txt \
+ /project/clme2295/1_linux/2_rnaseq/3_analysis/3_sambam/sorted_cd4_rep1.bam
+
+#the next step would be to take these files into R.
